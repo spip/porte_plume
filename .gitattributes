@@ -6,6 +6,9 @@ css/barre_outils.css -text
 css/images/handle.png -text
 css/images/menu.png -text
 css/images/submenu.png -text
+icones_barre/aelig-maj.png -text
+icones_barre/aelig.png -text
+icones_barre/ccedil-maj.png -text
 icones_barre/clean.png -text
 icones_barre/eagrave-maj.png -text
 icones_barre/eye.png -text
@@ -16,7 +19,9 @@ icones_barre/text_indent_remove.png -text
 icones_barre/text_italic.png -text
 icones_barre/text_list_bullets.png -text
 icones_barre/text_list_numbers.png -text
+icones_barre/text_lowercase.png -text
 icones_barre/text_strikethrough.png -text
+icones_barre/text_uppercase.png -text
 inc/barre.php -text
 inc/barre_outils.php -text
 javascript/jquery.markitup.js -text
