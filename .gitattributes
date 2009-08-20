@@ -34,6 +34,7 @@ javascript/jquery.markitup_pour_spip.js -text
 javascript/jquery.previsu_spip.js -text
 lang/barre_outils_ar.php -text
 lang/barre_outils_en.php -text
+lang/barre_outils_es.php -text
 lang/barre_outils_fr.php -text
 markitup/readme.txt -text
 markitup/templates/preview.css -text
