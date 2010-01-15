@@ -45,6 +45,7 @@ markitup/templates/preview.html -text
 /porte_plume_options.php -text
 /porte_plume_pipelines.php -text
 /porte_plume_preview.html -text
+/porte_plume_preview_fonctions.php -text
 /porte_plume_start.js.html -text
 tests/all_tests.php -text
 tests/barre_outil_markitup.php -text
