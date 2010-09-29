@@ -488,9 +488,7 @@
 					var newSelection = document.selection.createRange();
 					newSelection.text = block;
 				} else {
-					//textarea.value =  textarea.value.substring(0, caretPosition)  + block + textarea.value.substring(caretPosition + selection.length, textarea.value.length);
 					textarea.value =  textarea.value.substring(0, caretEffectivePosition)  + block + textarea.value.substring(caretEffectivePosition + selection.length, textarea.value.length);
-					//$$.val($$.val().substring(0, caretEffectivePosition) + block + $$.val().substring(caretEffectivePosition + selection.length));
 				}
 			}
 
