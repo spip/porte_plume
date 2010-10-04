@@ -3,7 +3,6 @@ action/porte_plume_previsu.php -text
 barre_outils/edition.php -text
 barre_outils/forum.php -text
 /barre_outils_icones.css.html -text
-configuration/porte_plume.php -text
 css/barre_outils.css -text
 css/barre_outils_prive.css -text
 css/images/handle.png -text
@@ -65,7 +64,6 @@ markitup/templates/preview.html -text
 /porte_plume_pipelines.php -text
 /porte_plume_start.js.html -text
 /porte_plume_start.js_fonctions.php -text
-prive/configurer/porte_plume.html -text
 prive/porte_plume_preview.html -text
 prive/porte_plume_preview_fonctions.php -text
 tests/all_tests.php -text
