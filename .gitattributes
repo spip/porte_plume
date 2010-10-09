@@ -60,7 +60,6 @@ markitup/readme.txt -text
 markitup/templates/preview.css -text
 markitup/templates/preview.html -text
 /plugin.xml -text
-/porte_plume_options.php -text
 /porte_plume_pipelines.php -text
 /porte_plume_start.js.html -text
 /porte_plume_start.js_fonctions.php -text
