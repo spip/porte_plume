@@ -2,7 +2,7 @@
 	<nom><multi>[fr]Porte plume[en]Quill[ar]&#1575;&#1604;&#1585;&#1610;&#1588;&#1577;[de]Federhalter</multi></nom>
 	<auteur>Matthieu Marcillaud</auteur>
 	<licence>GNU/GPL</licence>
-	<version>1.7.5</version>
+	<version>1.7.6</version>
 	<description>
 	<multi>[fr]Une barre d'outil pour bien &#233;crire
 _ Porte plume est une barre d'outil extensible pour SPIP qui
@@ -27,10 +27,9 @@ _ Der Federhalter ist eine erweiterbare Werkzeugleiste f&#252;r SPIP auf Grundla
 	<etat>stable</etat>
 	<prefix>porte_plume</prefix>
 
-  	<!-- Icone de http://icons.mysitemyway.com/free-clipart-icons/1/traditional-ink-bottle-pen-icon-id/83350/style-id/614/high-resolution-dark-blue-denim-jeans-icons/business/ -->
-  	<icon>images/porte-plume-128.png</icon>
+	<!-- Icone de http://icons.mysitemyway.com/free-clipart-icons/1/traditional-ink-bottle-pen-icon-id/83350/style-id/614/high-resolution-dark-blue-denim-jeans-icons/business/ -->
+	<icon>images/porte-plume-128.png</icon>
 
-	<options>porte_plume_options.php</options>
 	<fonctions>inc/barre_outils.php</fonctions>
 
  	<pipeline>
@@ -51,6 +50,19 @@ _ Der Federhalter ist eine erweiterbare Werkzeugleiste f&#252;r SPIP auf Grundla
  	<pipeline>
 		<nom>header_prive</nom>
 		<action>insert_head_prive</action>
+		<inclure>porte_plume_pipelines.php</inclure>
+	</pipeline>
+
+	<pipeline>
+		<nom>porte_plume_barre_pre_charger</nom>
+		<inclure>porte_plume_pipelines.php</inclure>
+	</pipeline>
+	<pipeline>
+		<nom>porte_plume_barre_charger</nom>
+		<inclure>porte_plume_pipelines.php</inclure>
+	</pipeline>
+	<pipeline>
+		<nom>porte_plume_lien_classe_vers_icone</nom>
 		<inclure>porte_plume_pipelines.php</inclure>
 	</pipeline>
 

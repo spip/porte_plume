@@ -114,4 +114,9 @@ function porte_plume_affiche_milieu($flux){
 
 	return $flux;
 }
+
+function porte_plume_porte_plume_barre_pre_charger($flux){return $flux;}
+function porte_plume_porte_plume_barre_charger($flux){return $flux;}
+function porte_plume_porte_plume_lien_classe_vers_icone($flux){return $flux;}
+
 ?>
