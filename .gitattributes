@@ -58,6 +58,7 @@ lang/barre_outils_de.php -text
 lang/barre_outils_en.php -text
 lang/barre_outils_es.php -text
 lang/barre_outils_fr.php -text
+lang/barre_outils_it.php -text
 markitup/readme.txt -text
 markitup/templates/preview.css -text
 markitup/templates/preview.html -text
