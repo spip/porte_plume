@@ -40,10 +40,9 @@ icones_barre/text_list_numbers.png -text
 icones_barre/text_lowercase.png -text
 icones_barre/text_strikethrough.png -text
 icones_barre/text_uppercase.png -text
-images/porte-plume-128.png -text
 images/porte-plume-16.png -text
 images/porte-plume-24.png -text
-images/porte-plume-48.png -text
+images/porte-plume-32.png -text
 images/sources.txt -text
 inc/barre.php -text
 inc/barre_outils.php -text
