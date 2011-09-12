@@ -69,6 +69,7 @@ markitup/templates/preview.html -text
 /porte_plume_start.js_fonctions.php -text
 prive/porte_plume_preview.html -text
 prive/porte_plume_preview_fonctions.php -text
+prive/squelettes/contenu/aide_typo.html -text
 tests/all_tests.php -text
 tests/barre_outil_markitup.php -text
 tests/lanceur_spip.php -text
