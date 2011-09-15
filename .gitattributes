@@ -60,6 +60,7 @@ lang/barreoutils_en.php -text
 lang/barreoutils_es.php -text
 lang/barreoutils_fr.php -text
 lang/barreoutils_it.php -text
+lang/barreoutils_sk.php -text
 markitup/readme.txt -text
 markitup/templates/preview.css -text
 markitup/templates/preview.html -text
