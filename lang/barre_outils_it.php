@@ -1,4 +1,6 @@
 <?php
+if (!defined("_ECRIRE_INC_VERSION")) return;
+
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 // B Nouveautes 
@@ -76,7 +78,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'barre_gestion_cr_casse' => 'Rispetta le maiuscole/minuscole',
 'barre_gestion_cr_tout' => 'Sostituisci tutto',
 'barre_gestion_cr_entier' => 'Parola intera',
-'barre_preview' => 'Modalità anteprima',
+'barre_preview' => 'Modalitï¿½ anteprima',
 'barre_stats' => 'Mostra le statistiche del testo',
 
 'barre_code' => 'Impagina un &lt;code&gt;codice informatico&lt;/code&gt;',
