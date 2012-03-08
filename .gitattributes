@@ -64,6 +64,7 @@ lang/barreoutils_sk.php -text
 lang/paquet-barreoutils.xml -text
 lang/paquet-porte_plume.xml -text
 lang/paquet-porte_plume_it.php -text
+lang/paquet-porte_plume_ru.php -text
 lang/paquet-porte_plume_sk.php -text
 markitup/readme.txt -text
 markitup/templates/preview.css -text
