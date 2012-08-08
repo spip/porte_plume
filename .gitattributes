@@ -46,12 +46,10 @@ images/porte-plume-16.png -text
 images/porte-plume-24.png -text
 images/porte-plume-32.png -text
 images/sources.txt -text
-inc/barre.php -text
 javascript/jquery.markitup.js -text
 javascript/jquery.markitup_pour_spip.js -text
 javascript/jquery.previsu_spip.js -text
 javascript/porte_plume_forcer_hauteur.js -text
-javascript/xregexp-min.js -text
 lang/barreoutils.xml -text
 lang/barreoutils_ar.php -text
 lang/barreoutils_de.php -text
