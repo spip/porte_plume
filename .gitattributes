@@ -63,6 +63,7 @@ lang/barreoutils_ru.php -text
 lang/barreoutils_sk.php -text
 lang/paquet-barreoutils.xml -text
 lang/paquet-porte_plume.xml -text
+lang/paquet-porte_plume_es.php -text
 lang/paquet-porte_plume_fa.php -text
 lang/paquet-porte_plume_it.php -text
 lang/paquet-porte_plume_nl.php -text
