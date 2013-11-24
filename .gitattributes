@@ -5,9 +5,11 @@ barre_outils/forum.php -text
 /barre_outils_icones.css.html -text
 css/barre_outils.css -text
 css/barre_outils_prive.css -text
-css/images/handle.png -text
-css/images/menu.png -text
-css/images/submenu.png -text
+css/img/arrow_in.png -text
+css/img/arrow_out.png -text
+css/img/handle.png -text
+css/img/menu.png -text
+css/img/submenu.png -text
 formulaires/configurer_porte_plume.html -text
 icones_barre/aelig-maj.png -text
 icones_barre/aelig.png -text
