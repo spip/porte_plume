@@ -58,12 +58,9 @@ lang/barreoutils_es.php -text
 lang/barreoutils_fa.php -text
 lang/barreoutils_fr.php -text
 lang/barreoutils_fr_fem.php -text
-lang/barreoutils_fr_tu.php -text
 lang/barreoutils_it.php -text
 lang/barreoutils_nl.php -text
-lang/barreoutils_oc_ni_mis.php -text
 lang/barreoutils_pt.php -text
-lang/barreoutils_pt_br.php -text
 lang/barreoutils_ru.php -text
 lang/barreoutils_sk.php -text
 lang/paquet-barreoutils.xml -text
@@ -71,12 +68,9 @@ lang/paquet-porte_plume.xml -text
 lang/paquet-porte_plume_es.php -text
 lang/paquet-porte_plume_fa.php -text
 lang/paquet-porte_plume_fr_fem.php -text
-lang/paquet-porte_plume_fr_tu.php -text
 lang/paquet-porte_plume_it.php -text
 lang/paquet-porte_plume_nl.php -text
-lang/paquet-porte_plume_oc_ni_mis.php -text
 lang/paquet-porte_plume_pt.php -text
-lang/paquet-porte_plume_pt_br.php -text
 lang/paquet-porte_plume_ru.php -text
 lang/paquet-porte_plume_sk.php -text
 markitup/readme.txt -text
