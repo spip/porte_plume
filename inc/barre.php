@@ -11,14 +11,14 @@ if (!defined("_ECRIRE_INC_VERSION")) return;
 
 // construit un bouton (ancre) de raccourci avec icone et aide
 
-// http://doc.spip.org/@bouton_barre_racc
+// http://code.spip.net/@bouton_barre_racc
 function bouton_barre_racc($action, $img, $help, $champhelp) {
 	return;
 }
 
 // construit un tableau de raccourcis pour un noeud de DOM 
 
-// http://doc.spip.org/@afficher_barre
+// http://code.spip.net/@afficher_barre
 if (!function_exists('afficher_barre')) {
 function afficher_barre($champ, $forum=false, $lang='') {
 	return;
@@ -27,7 +27,7 @@ function afficher_barre($champ, $forum=false, $lang='') {
 
 // expliciter les 3 arguments pour avoir xhtml strict
 
-// http://doc.spip.org/@afficher_textarea_barre
+// http://code.spip.net/@afficher_textarea_barre
 function afficher_textarea_barre($texte, $forum=false, $form='')
 {
 	global $spip_display, $spip_ecran;
