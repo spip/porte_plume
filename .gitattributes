@@ -2,6 +2,7 @@
 action/porte_plume_previsu.php -text
 barre_outils/edition.php -text
 barre_outils/forum.php -text
+barre_outils/vide.php -text
 /barre_outils_icones.css.html -text
 css/barre_outils.css -text
 css/barre_outils_prive.css -text
