@@ -3,8 +3,8 @@ action/porte_plume_previsu.php -text
 barre_outils/edition.php -text
 barre_outils/forum.php -text
 barre_outils/vide.php -text
-/barre_outils_icones.css.html -text
 css/barre_outils.css -text
+css/barre_outils_icones.css.html -text
 css/barre_outils_prive.css -text
 css/img/arrow_in.png -text
 css/img/arrow_out.png -text
@@ -53,6 +53,8 @@ javascript/jquery.markitup.js -text
 javascript/jquery.markitup_pour_spip.js -text
 javascript/jquery.previsu_spip.js -text
 javascript/porte_plume_forcer_hauteur.js -text
+javascript/porte_plume_start.js.html -text
+javascript/porte_plume_start.js_fonctions.php -text
 lang/barreoutils.xml -text
 lang/barreoutils_ar.php -text
 lang/barreoutils_de.php -text
@@ -90,8 +92,6 @@ markitup/templates/preview.html -text
 /porte_plume_fonctions.php -text
 /porte_plume_ieconfig.php -text
 /porte_plume_pipelines.php -text
-/porte_plume_start.js.html -text
-/porte_plume_start.js_fonctions.php -text
 prive/porte_plume_preview.html -text
 prive/porte_plume_preview_fonctions.php -text
 prive/squelettes/contenu/aide_typo.html -text
