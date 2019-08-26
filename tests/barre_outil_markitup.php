@@ -264,7 +264,7 @@ class Test_barre_outil_markitup extends SpipTest {
 		));
 		$json = $b->creer_json();
 		$this->assertPattern(',barre_outils_spip = {,', $json);
-		$this->assertPattern(',\[{"name":",', $json);
+		$this->assertPattern(',"name": ",', $json);
 		$this->assertNoPattern(',eacute;,', $json);
 	}
 
@@ -298,7 +298,7 @@ class Test_barre_outil_markitup extends SpipTest {
 
 		// la langue est bien transmise au json
 		$json = $b->creer_json();
-		$this->assertPattern(',"lang":\[,', $json);
+		$this->assertPattern(',"lang": \[,', $json);
 	}
 
 
@@ -314,8 +314,8 @@ class Test_barre_outil_markitup extends SpipTest {
 		);
 		$b->ajouterApres('header1', $clean);
 		$json = $b->creer_json();
-		// pas de :"function(... ..."
-		$this->assertPattern('/:function\(/', $json);
+		// pas de : "function(... ..."
+		$this->assertPattern('/: function\(/', $json);
 	}
 
 	function testParametreFunctionsDansJson() {
