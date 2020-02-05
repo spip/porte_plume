@@ -1,9 +1,9 @@
 <traduction
 	module="paquet-porte_plume"
-	id="paquet-porte_plume--porte_plume-7e673"
+	id="paquet-porte_plume--porte_plume-bbdf3"
 	gestionnaire="salvatore"
 	url="https://trad.spip.net"
-	source="svn://zone.spip.org/spip-zone/_core_/plugins/porte_plume/lang"
+	source="https://git.spip.net/spip/porte_plume.git"
 	reference="fr">
 	<langue code="ar" url="https://trad.spip.net/tradlang_module/paquet-porte_plume?lang_cible=ar" total="3" traduits="3" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
