@@ -267,13 +267,16 @@
 								setTimeout(function() { markup(button) },1);
 								return false;
 							}).on('mouseenter.markItUp', function() {
-									$('> ul', this).show();
+									$('> a', this).addClass('active');
+									$('> ul', this).addClass('expanded');
 									$(document).one('click', function() { // close dropmenu if click outside
-											$('ul ul', header).hide();
+											$('ul a', header).removeClass('active');
+											$('ul ul', header).removeClass('expanded');
 										}
 									);
 							}).on('mouseleave.markItUp', function() {
-									$('> ul', this).hide();
+									$('> a', this).removeClass('active');
+									$('> ul', this).removeClass('expanded');
 							}).appendTo(ul);
 							if (button.dropMenu) {
 								levels.push(i);
