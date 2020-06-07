@@ -8,6 +8,9 @@
 	<langue code="ar" url="https://trad.spip.net/tradlang_module/barreoutils?lang_cible=ar" total="81" traduits="81" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="George" lien="https://trad.spip.net/auteur/جورج-قندلفت" />
 	</langue>
+	<langue code="bn" url="https://trad.spip.net/tradlang_module/barreoutils?lang_cible=bn" total="81" traduits="81" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
+		<traducteur nom="nbdeditor" lien="https://trad.spip.net/auteur/nbdeditor" />
+	</langue>
 	<langue code="de" url="https://trad.spip.net/tradlang_module/barreoutils?lang_cible=de" total="81" traduits="81" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="klaus++" lien="https://trad.spip.net/auteur/klaus" />
 	</langue>
