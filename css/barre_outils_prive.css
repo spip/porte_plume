@@ -13,3 +13,8 @@
 	/* font-size: 1.05em;  */
 	line-height: 1.4em;
 }
+
+/* dans la previsu masquer les JS echappés */
+.markItUp .markItUpPreview .echappe-js {
+	display: none;
+}
