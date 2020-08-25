@@ -47,15 +47,18 @@ $(window).on('load', function(){
 		$('.formulaire_spip textarea.inserer_barre_forum').barre_outils('forum');
 		$('.formulaire_spip textarea.inserer_barre_edition').barre_outils('edition');
 		$('.formulaire_spip textarea.inserer_previsualisation').barre_previsualisation();
+
+		[(#ENV{inserer_auto_name_texte,0}|oui)
 		// fonction specifique aux formulaires de SPIP :
 		// barre de forum
 		$('textarea.textarea_forum').barre_outils('forum');
 		[(#CONFIG{forums_afficher_barre}|=={non}|non)
 		$('.formulaire_forum textarea\[name=texte\]').barre_outils('forum');]
 		// barre d'edition et onglets de previsualisation
-		$('.formulaire_spip[(#CONFIG{forums_afficher_barre}|=={non}|?{':not(#formulaire_forum)',''})] textarea[name=texte]')
+		$('.formulaire_spip[(#CONFIG{forums_afficher_barre}|=={non}|?{':not(#formulaire_forum)',''})] textarea\[name=texte\]')
 			.barre_outils('edition').end()
 			.barre_previsualisation();
+		]
 	}
 	barrebouilles();
 	onAjaxLoad(barrebouilles);

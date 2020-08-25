@@ -62,6 +62,25 @@ function autoriser_porteplume_afficher_public_dist($faire, $type, $id, $qui, $op
 }
 
 /**
+ * Autoriser le porte plume dans l'espace prive ?
+ *
+ * @param  string $faire Action demandée
+ * @param  string $type Type d'objet sur lequel appliquer l'action
+ * @param  int $id Identifiant de l'objet
+ * @param  array $qui Description de l'auteur demandant l'autorisation
+ * @param  array $opt Options de cette autorisation
+ * @return bool          true s'il a le droit, false sinon
+ */
+function autoriser_porteplume_afficher_prive_dist($faire, $type, $id, $qui, $opt) {
+	// on peut desactiver le chargement complet dans le prive
+	if (defined('_PORTE_PLUME_PRIVE')) {
+		return _PORTE_PLUME_PRIVE;
+	}
+
+	return true;
+}
+
+/**
  * Ajout des scripts du porte-plume dans le head des pages publiques
  *
  * Uniquement si l'on est autorisé à l'afficher le porte plume dans
@@ -88,10 +107,12 @@ function porte_plume_insert_head_public($flux) {
  * @return string Contenu du head
  */
 function porte_plume_insert_head_prive($flux) {
-	$js = timestamp(find_in_path('javascript/porte_plume_forcer_hauteur.js'));
-	$flux = porte_plume_inserer_head($flux, $GLOBALS['spip_lang'], true)
-		. "<script type='text/javascript' src='$js'></script>\n";
-
+	include_spip('inc/autoriser');
+	if (autoriser('afficher_prive', 'porteplume')){
+		$js = timestamp(find_in_path('javascript/porte_plume_forcer_hauteur.js'));
+		$flux = porte_plume_inserer_head($flux, $GLOBALS['spip_lang'], true)
+			. "<script type='text/javascript' src='$js'></script>\n";
+	}
 	return $flux;
 }
 
@@ -108,7 +129,8 @@ function porte_plume_inserer_head($flux, $lang, $prive = false) {
 	$js_previsu = timestamp(find_in_path('javascript/jquery.previsu_spip.js'));
 
 	$hash = md5(porte_plume_creer_json_markitup());
-	$js_start = produire_fond_statique('javascript/porte_plume_start.js', array('lang' => $lang, 'hash' => $hash));
+	$inserer_auto_name_texte = defined('_PORTE_PLUME_INSERER_AUTO_NAME_TEXTE') ? _PORTE_PLUME_INSERER_AUTO_NAME_TEXTE : true;
+	$js_start = produire_fond_statique('javascript/porte_plume_start.js', array('lang' => $lang, 'hash' => $hash, 'inserer_auto_name_texte' => $inserer_auto_name_texte));
 
 	$flux .=
 		"<script type='text/javascript' src='$markitup'></script>\n"
@@ -141,8 +163,7 @@ function porte_plume_insert_head_prive_css($flux) {
  */
 function porte_plume_insert_head_css($flux = '', $prive = false) {
 	include_spip('inc/autoriser');
-	// toujours autoriser pour le prive.
-	if ($prive or autoriser('afficher_public', 'porteplume')) {
+	if (autoriser($prive ? 'afficher_prive' : 'afficher_public', 'porteplume')) {
 		if ($prive) {
 			$cssprive = timestamp(find_in_path('css/barre_outils_prive.css'));
 			$flux .= "<link rel='stylesheet' type='text/css' media='all' href='$cssprive' />\n";
