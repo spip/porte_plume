@@ -125,6 +125,8 @@ function porte_plume_insert_head_prive($flux) {
  * @return string Contenu du head complété
  */
 function porte_plume_inserer_head($flux, $lang, $prive = false) {
+	include_spip('porte_plume_fonctions');
+	
 	$markitup = timestamp(find_in_path('javascript/jquery.markitup_pour_spip.js'));
 	$js_previsu = timestamp(find_in_path('javascript/jquery.previsu_spip.js'));
 
