@@ -153,6 +153,8 @@
 							node.html(data).removeClass('ajaxLoad');
 							//ouvre un nouvel onglet lorsqu'on clique sur un lien dans la prévisualisation
 							$("a",node).attr("target","blank");
+							// passer les forms en novalidate
+							$("form",node).attr("novalidate","novalidate");
 						}
 					} );
 				}
