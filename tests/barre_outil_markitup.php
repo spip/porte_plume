@@ -112,7 +112,12 @@ class Test_barre_outil_markitup extends SpipTest {
 		$this->expectError(new PatternExpectation("/Undefined property: Barre_outils::\\\$fausseVariable/i"));
 		$b->fausseVariable;
 
-		$this->expectError(new PatternExpectation("/Undefined index: fauxParam/i"));
+		if (PHP_VERSION_ID < 80000) {
+			$this->expectError(new PatternExpectation("/Undefined index: fauxParam/i"));
+		}
+		else {
+			$this->expectError(new PatternExpectation("/Undefined array key \"fauxParam\"/i"));
+		}
 		$b->markupSet[0]['fauxParam'];
 
 		$this->assertEqual(7, count($b->markupSet[0]));
