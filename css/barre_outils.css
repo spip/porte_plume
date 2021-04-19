@@ -53,8 +53,7 @@
 .markItUp .markItUpHeader ul a:focus-within,
 .markItUp .markItUpHeader ul a:active,
 .markItUp .markItUpHeader ul a:hover {
-	background-color: #eee;
-	background-color: var(--couleur-claire2, hsla(0, 0%, 0%, 0.05)); /* Amélioration progressive nav récents */
+	background-color: var(--spip-color-theme-lightest, hsla(0, 0%, 0%, 0.05));
 	outline: none !important;
 }
 
@@ -92,8 +91,7 @@
 	left: 0;
 	right: 0;
 	bottom: -2px;
-	border-bottom: 2px solid #888;
-	border-bottom-color: var(--couleur-foncee, hsla(0, 0%, 0%, 0.66)); /* amélioration progressive */
+	border-bottom: 2px solid var(--spip-color-theme, hsla(0, 0%, 0%, 0.66));
 }
 
 
@@ -109,9 +107,9 @@
 	min-height: 3.2em;
 	background: white;
 	border: 1px solid #ddd;
-	border-color: hsla(0, 0%, 0%, 0.1); /* navs modernes */
-	border-bottom-color: hsla(0, 0%, 0%, 0.05);  /* navs modernes */
-	border-radius: 6px 6px 0 0;
+	border-color: var(--spip-form-border-color, hsla(0, 0%, 0%, 0.15));
+	border-bottom-color: var(--spip-form-border-color, hsla(0, 0%, 0%, 0.15));
+	border-radius: var(--spip-form-border-radius, 6px) var(--spip-form-border-radius, 6px) 0 0;
 
 }
 
@@ -207,14 +205,12 @@
 }
 
 .markItUp .markItUpHeader ul .markItUpDropMenu ul a {
-	background-color: #eee;
-	background-color: var(--couleur-claire2, hsla(0, 0%, 0%, 0.05)); /* Amélioration progressive navs récents */
+	background-color: var(--spip-color-theme-lightest, hsla(0, 0%, 0%, 0.05));
 }
 .markItUp .markItUpHeader ul .markItUpDropMenu ul a:hover,
 .markItUp .markItUpHeader ul .markItUpDropMenu ul a:focus,
 .markItUp .markItUpHeader ul .markItUpDropMenu ul a:active {
-	background-color: #ccc;
-	background-color: var(--couleur-claire1, hsla(0, 0%, 0%, 0.15)); /* Amélioration progressive navs récents */
+	background-color: var(--spip-color-theme-lighter, hsla(0, 0%, 0%, 0.15));
 }
 
 /* le padding rompt la continuite du hover sous IE7&8 */
@@ -251,7 +247,7 @@
 /* cas très particulier champs texte de spip */
 .markItUp .markItUpEditor#text_area {
 	height: 300px;
-	border-color: hsla(0, 0%, 0%, 0.1); /* Amélioration progressive nav récents */
+	border-color: var(--spip-form-border-color, hsla(0, 0%, 0%, 0.15));
 	border-top: 0;
 }
 
@@ -264,7 +260,7 @@
  .markItUp .markItUpPreview {
 	clear: both;
 	border: 1px solid #ddd;
-	border-color: hsla(0, 0%, 0%, 0.1); /* Amélioration progressive */
+	border-color: var(--spip-form-border-color, hsla(0, 0%, 0%, 0.15));
 	border-top: 0;
 	background: #fff;
 	overflow: auto;
