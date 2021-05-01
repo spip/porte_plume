@@ -1,9 +1,9 @@
 <paquet
 	prefix="porte_plume"
 	categorie="edition"
-	version="1.20.2"
+	version="2.0.0"
 	etat="stable"
-	compatibilite="[3.3.0-dev;3.3.*]"
+	compatibilite="[4.0.0-alpha;4.0.*]"
 	logo="images/porte-plume-xx.svg"
 	documentation="https://contrib.spip.net/Porte-plume,3117"
 >
