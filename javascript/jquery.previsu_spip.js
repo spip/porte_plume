@@ -62,6 +62,7 @@
 					
 					// Si on vient de passer en fullscreen
 					if (mark.is('.fullscreen')){
+						$('body').addClass('markitup-fullscreen');
 						is_full_screen = true;
 						// afficher les boutons de la barre s'ils étaient masqués (cf prévisu)
 						mark.find('.markItUpHeader a').show();
@@ -101,6 +102,7 @@
 					}
 					// Si on sort du fullscreen
 					else {
+						$('body').removeClass('markitup-fullscreen');
 						// On remet la taille d'origine
 						textarea.css('height', textarea.data('height-origin'));
 						// masquer les boutons de la barre s'ils étaient masqués avant le plein écran (cf prévisu)

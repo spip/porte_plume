@@ -18,3 +18,13 @@
 .markItUp .markItUpPreview .echappe-js {
 	display: none;
 }
+
+/****************************/
+/* fullscreen */
+body.markitup-fullscreen {
+	overflow: hidden;
+}
+body.markitup-fullscreen #bando_haut,
+body.markitup-fullscreen #pied {
+	visibility: hidden;
+}
