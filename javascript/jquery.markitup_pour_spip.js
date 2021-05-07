@@ -801,13 +801,22 @@
 							if (ctrlKey === true) {  // Enter + Ctrl
 								ctrlKey = false;
 								markup(options.onCtrlEnter);
+								if (!options.onCtrlEnter.keepDefault) {
+									textarea.dispatchEvent(new Event('input'));
+								}
 								return options.onCtrlEnter.keepDefault;
 							} else if (shiftKey === true) { // Enter + Shift
 								shiftKey = false;
 								markup(options.onShiftEnter);
+								if (!options.onShiftEnter.keepDefault) {
+									textarea.dispatchEvent(new Event('input'));
+								}
 								return options.onShiftEnter.keepDefault;
 							} else { // only Enter
 								markup(options.onEnter);
+								if (!options.onEnter.keepDefault) {
+									textarea.dispatchEvent(new Event('input'));
+								}
 								return options.onEnter.keepDefault;
 							}
 						}
