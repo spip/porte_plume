@@ -1,6 +1,6 @@
 // ----------------------------------------------------------------------------
 // markItUp! Universal MarkUp Engine, JQuery plugin
-// v 1.1.15 ( e147ca3 - 16/08/2018 )
+// v 1.1.15 ( 77b48ad - 22/10/2018 )
 // Dual licensed under the MIT and GPL licenses.
 // ----------------------------------------------------------------------------
 // Copyright (C) 2007-2012 Jay Salvat
@@ -607,6 +607,9 @@
 					refreshPreview(); 
 				}
 
+				// Triggers an input event to allow other scripts to react.
+				textarea.dispatchEvent(new Event('input'));
+
 				// reinit keyevent
 				shiftKey = altKey = ctrlKey = abort = false;
 			}
@@ -749,7 +752,7 @@
 							dataType: 'text',
 							global: false,
 							success: function(data) {
-								writeInPreview( localize(data, 1).replace(/<!-- content -->/g, $$.val()) );
+								writeInPreview( localize(data, 1).replace(/<!-- content -->/g, parsedData) );
 							}
 						});
 					}
