@@ -170,6 +170,7 @@ function porte_plume_insert_head_css($flux = '', $prive = false) {
 		}
 		$css = timestamp(direction_css(find_in_path('css/barre_outils.css'), lang_dir()));
 
+		include_spip('porte_plume_fonctions');
 		$hash = md5(barre_outils_css_icones());
 		$css_icones = produire_fond_statique('css/barre_outils_icones.css', array('hash' => $hash));
 
