@@ -4,7 +4,7 @@
  * Licence GPL
  * Auteur Matthieu Marcillaud
  */
-require_once('lanceur_spip.php');
+require_once(__DIR__ . '/lanceur_spip.php');
 
 class Test_barre_outil_markitup extends SpipTest {
 
