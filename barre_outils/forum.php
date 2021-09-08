@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Déclaration de la barre d'outil de forum de SPIP
  *
@@ -6,6 +7,7 @@
  * @license GPL
  * @package SPIP\PortePlume\BarreOutils
  */
+
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -22,7 +24,7 @@ function barre_outils_forum() {
 	$barre = $edition();
 	$barre->nameSpace = 'forum';
 	$barre->cacherTout();
-	$barre->afficher(array(
+	$barre->afficher([
 		'bold',
 		'italic',
 		'sepLink',
@@ -44,7 +46,7 @@ function barre_outils_forum() {
 		'oe',
 		'OE',
 		'Ccedil',
-	));
+	]);
 
 	return $barre;
 }
