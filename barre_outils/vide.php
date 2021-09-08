@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Déclaration de la barre d'outil vide de SPIP
  *
@@ -6,7 +7,8 @@
  * @license GPL
  * @package SPIP\PortePlume\BarreOutils
  */
-if (!defined("_ECRIRE_INC_VERSION")) {
+
+if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
@@ -16,13 +18,12 @@ if (!defined("_ECRIRE_INC_VERSION")) {
  *
  * @return Barre_outils La barre d'outil
  */
- 
+
 function barre_outils_vide() {
-	$set = new Barre_outils(array(
+	$set = new Barre_outils([
 		'nameSpace' => 'vide',
-		'markupSet' => array(),
-	));
+		'markupSet' => [],
+	]);
 	$set->cacherTout();
 	return $set;
 }
-

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Gestion de l'action porte_plume_previsu
  *
@@ -31,7 +32,7 @@ function action_porte_plume_previsu_dist() {
 	// mais il faut avoir le droit de previsualiser
 	// (par defaut le droit d'aller dans ecrire/)
 	if (!autoriser('previsualiser', 'porteplume')) {
-		$contexte = array();
+		$contexte = [];
 	}
 
 	echo recuperer_fond('prive/porte_plume_preview', $contexte);

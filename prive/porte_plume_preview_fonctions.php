@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fonctions pour la prévisualisation
  *

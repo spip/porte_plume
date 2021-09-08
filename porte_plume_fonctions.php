@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Fonctions utiles pour le Porte Plume
  *
@@ -65,7 +66,7 @@ class Barre_outils {
 	 *
 	 * @var array
 	 */
-	public $onEnter = array();
+	public $onEnter = [];
 
 	/**
 	 * Option de markitup : que faire sur l'appuie de Shift+Entrée ?
@@ -73,21 +74,21 @@ class Barre_outils {
 	 * @example array('keepDefault'=>false, 'replaceWith'=>"\n_ ")
 	 * @var array
 	 */
-	public $onShiftEnter = array();
+	public $onShiftEnter = [];
 
 	/**
 	 * Option de markitup : que faire sur l'appuie de Control+Entrée ?
 	 *
 	 * @var array
 	 */
-	public $onCtrlEnter = array();
+	public $onCtrlEnter = [];
 
 	/**
 	 * Option de markitup : que faire sur l'appuie d'une tabulation ?
 	 *
 	 * @var array
 	 */
-	public $onTab = array();
+	public $onTab = [];
 
 	/**
 	 * Option de markitup : Code JS à exécuter avant une insertion
@@ -108,7 +109,7 @@ class Barre_outils {
 	 *
 	 * @var array
 	 */
-	public $markupSet = array();
+	public $markupSet = [];
 
 	/**
 	 * Fonctions JS supplémentaires à écrire après la déclaration JSON
@@ -123,7 +124,7 @@ class Barre_outils {
 	 *
 	 * @var array
 	 */
-	private $_liste_params_autorises = array(
+	private $_liste_params_autorises = [
 
 		'replaceWith',
 		'openWith',
@@ -172,7 +173,7 @@ class Barre_outils {
 		'display',
 		// donner un identifiant unique au bouton (pour le php)
 		'id',
-	);
+	];
 
 	/**
 	 * Constructeur
@@ -184,7 +185,7 @@ class Barre_outils {
 	 * @param array $params Paramètres de la barre d'outil
 	 * @return void
 	 */
-	public function __construct($params = array()) {
+	public function __construct($params = []) {
 		foreach ($params as $p => $v) {
 			if (isset($this->$p)) {
 				// si tableau, on verifie les entrees
@@ -208,7 +209,7 @@ class Barre_outils {
 	 * @return array
 	 *     Paramètres, soustrait de ceux qui ne sont pas valides
 	 */
-	public function verif_params($nom, $params = array()) {
+	public function verif_params($nom, $params = []) {
 		// si markupset, on boucle sur les items
 		if (stripos($nom, 'markupSet') !== false) {
 			foreach ($params as $i => $v) {
@@ -256,14 +257,14 @@ class Barre_outils {
 	 *     Paramètres de l'élément modifié ou paramètres ajoutés
 	 *     False si l'identifiant cherché n'est pas trouvé
 	 */
-	public function affecter(&$tableau, $identifiant, $params = array(), $lieu = 'dedans', $plusieurs = false) {
+	public function affecter(&$tableau, $identifiant, $params = [], $lieu = 'dedans', $plusieurs = false) {
 		static $cle_de_recherche = 'id'; // ou className ?
 
 		if ($tableau === null) {// utile ?
 			$tableau = &$this->markupSet;
 		}
 
-		if (!in_array($lieu, array('dedans', 'avant', 'apres'))) {
+		if (!in_array($lieu, ['dedans', 'avant', 'apres'])) {
 			$lieu = 'dedans';
 		}
 
@@ -279,7 +280,7 @@ class Barre_outils {
 		if (($trouve !== false)) {
 			if ($params) {
 				// verifier que les insertions sont correctes
-				$les_params = ($plusieurs ? $params : array($params));
+				$les_params = ($plusieurs ? $params : [$params]);
 				foreach ($les_params as $i => $un_params) {
 					$les_params[$i] = $this->verif_params($identifiant, $un_params);
 				}
@@ -306,8 +307,10 @@ class Barre_outils {
 		foreach ($tableau as $i => $v) {
 			if (is_array($v)) {
 				foreach ($v as $m => $n) {
-					if (is_array($n)
-						and ($r = $this->affecter($tableau[$i][$m], $identifiant, $params, $lieu, $plusieurs))) {
+					if (
+						is_array($n)
+						and ($r = $this->affecter($tableau[$i][$m], $identifiant, $params, $lieu, $plusieurs))
+					) {
 						return $r;
 					}
 				}
@@ -332,7 +335,7 @@ class Barre_outils {
 	 * @return bool
 	 *     false si aucun paramètre à affecter, true sinon.
 	 */
-	public function affecter_a_tous(&$tableau, $params = array(), $ids = array()) {
+	public function affecter_a_tous(&$tableau, $params = [], $ids = []) {
 		if (!$params) {
 			return false;
 		}
@@ -372,7 +375,7 @@ class Barre_outils {
 	 *     true si plusieurs identifiants,
 	 *     array sinon : description de l'identifiant cherché.
 	 */
-	public function set($identifiant, $params = array()) {
+	public function set($identifiant, $params = []) {
 		// prudence tout de meme a pas tout modifier involontairement (si array)
 		if (!$identifiant) {
 			return false;
@@ -418,7 +421,7 @@ class Barre_outils {
 	 *     array sinon : description de l'identifiant cherché.
 	 */
 	public function afficher($identifiant) {
-		return $this->set($identifiant, array('display' => true));
+		return $this->set($identifiant, ['display' => true]);
 	}
 
 
@@ -434,7 +437,7 @@ class Barre_outils {
 	 *     array sinon : description de l'identifiant cherché.
 	 */
 	public function cacher($identifiant) {
-		return $this->set($identifiant, array('display' => false));
+		return $this->set($identifiant, ['display' => false]);
 	}
 
 
@@ -446,7 +449,7 @@ class Barre_outils {
 	 *     false si aucun paramètre à affecter, true sinon.
 	 */
 	public function afficherTout() {
-		return $this->affecter_a_tous($this->markupSet, array('display' => true));
+		return $this->affecter_a_tous($this->markupSet, ['display' => true]);
 	}
 
 	/**
@@ -457,7 +460,7 @@ class Barre_outils {
 	 *     false si aucun paramètre à affecter, true sinon.
 	 */
 	public function cacherTout() {
-		return $this->affecter_a_tous($this->markupSet, array('display' => false));
+		return $this->affecter_a_tous($this->markupSet, ['display' => false]);
 	}
 
 
@@ -635,7 +638,7 @@ class Barre_outils {
 		}
 		foreach ($this->markupSet as $p => $v) {
 			foreach ($v as $n => $m) {
-				if (in_array($n, array('id', 'display'))) {
+				if (in_array($n, ['id', 'display'])) {
 					unset($this->markupSet[$p][$n]);
 				}
 			}
@@ -713,7 +716,7 @@ function barre_outils_css_icones() {
 	}
 
 	// liste des classes css et leur correspondance avec une icone
-	$classe2icone = array();
+	$classe2icone = [];
 	foreach ($barres as $barre) {
 		include_spip('barre_outils/' . $barre);
 		if ($f = charger_fonction($barre . '_icones', 'barre_outils', true)) {
@@ -793,7 +796,8 @@ function barre_outils_liste() {
 	}
 
 	// on recupere l'ensemble des barres d'outils connues
-	if (!$sets = find_all_in_path('barre_outils/', '.*[.]php')
+	if (
+		!$sets = find_all_in_path('barre_outils/', '.*[.]php')
 		or !is_array($sets)
 	) {
 		spip_log("[Scandale] Porte Plume ne trouve pas de barre d'outils !");
@@ -854,7 +858,7 @@ function traitements_previsu($texte, $nom_champ = '', $type_objet = '', $connect
 		} else {
 			// [FIXME] Éviter une notice sur le eval suivant qui ne connait
 			// pas la Pile ici. C'est pas tres joli...
-			$Pile = array(0 => array());
+			$Pile = [0 => []];
 			// remplacer le placeholder %s par le texte fourni
 			eval('$texte=' . str_replace('%s', '$texte', $ps) . ';');
 		}
@@ -892,7 +896,7 @@ function porte_plume_creer_json_markitup() {
 	}
 
 	// 1) On initialise tous les jeux de barres
-	$barres = array();
+	$barres = [];
 	foreach ($sets as $set) {
 		if (($barre = barre_outils_initialiser($set)) and is_object($barre)) {
 			$barres[$set] = $barre;
@@ -935,7 +939,7 @@ function porte_plume_creer_json_markitup() {
 
 
 	// 4 On crée les jsons
-	$json = "";
+	$json = '';
 	foreach ($barres as $set => $barre) {
 		$json .= $barre->creer_json();
 	}

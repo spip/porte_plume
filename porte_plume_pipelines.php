@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Déclarations d'autorisations et utilisations de pipelines
  *
@@ -108,7 +109,7 @@ function porte_plume_insert_head_public($flux) {
  */
 function porte_plume_insert_head_prive($flux) {
 	include_spip('inc/autoriser');
-	if (autoriser('afficher_prive', 'porteplume')){
+	if (autoriser('afficher_prive', 'porteplume')) {
 		$js = timestamp(find_in_path('javascript/porte_plume_forcer_hauteur.js'));
 		$flux = porte_plume_inserer_head($flux, $GLOBALS['spip_lang'], true)
 			. "<script type='text/javascript' src='$js'></script>\n";
@@ -126,13 +127,13 @@ function porte_plume_insert_head_prive($flux) {
  */
 function porte_plume_inserer_head($flux, $lang, $prive = false) {
 	include_spip('porte_plume_fonctions');
-	
+
 	$markitup = timestamp(find_in_path('javascript/jquery.markitup_pour_spip.js'));
 	$js_previsu = timestamp(find_in_path('javascript/jquery.previsu_spip.js'));
 
 	$hash = md5(porte_plume_creer_json_markitup());
 	$inserer_auto_name_texte = defined('_PORTE_PLUME_INSERER_AUTO_NAME_TEXTE') ? _PORTE_PLUME_INSERER_AUTO_NAME_TEXTE : true;
-	$js_start = produire_fond_statique('javascript/porte_plume_start.js', array('lang' => $lang, 'hash' => $hash, 'inserer_auto_name_texte' => $inserer_auto_name_texte));
+	$js_start = produire_fond_statique('javascript/porte_plume_start.js', ['lang' => $lang, 'hash' => $hash, 'inserer_auto_name_texte' => $inserer_auto_name_texte]);
 
 	$flux .=
 		"<script type='text/javascript' src='$markitup'></script>\n"
@@ -174,7 +175,7 @@ function porte_plume_insert_head_css($flux = '', $prive = false) {
 
 		include_spip('porte_plume_fonctions');
 		$hash = md5(barre_outils_css_icones());
-		$css_icones = produire_fond_statique('css/barre_outils_icones.css', array('hash' => $hash));
+		$css_icones = produire_fond_statique('css/barre_outils_icones.css', ['hash' => $hash]);
 
 		$flux
 			.= "<link rel='stylesheet' type='text/css' media='all' href='$css' />\n"
@@ -211,7 +212,7 @@ function porte_plume_affiche_milieu($flux) {
 	if ($flux['args']['exec'] == 'configurer_avancees') {
 		$flux['data'] .= recuperer_fond(
 			'prive/squelettes/inclure/configurer',
-			array('configurer' => 'configurer_porte_plume')
+			['configurer' => 'configurer_porte_plume']
 		);
 	}
 
