@@ -88,7 +88,7 @@ class Test_barre_outil_markitup extends SpipTest {
 		$b = new Barre_outils($this->baseParamsBarre);
 		$this->assertEqual('spip', $b->nameSpace);
 		$this->assertEqual('header1', $b->markupSet[0]['id']);
-		$this->assertEqual(7, count($b->markupSet[0]));
+		$this->assertEqual(7, is_countable($b->markupSet[0]) ? count($b->markupSet[0]) : 0);
 	}
 
 	function testInitialisationBarreEtendue() {
@@ -97,9 +97,9 @@ class Test_barre_outil_markitup extends SpipTest {
 		$b = new Barre_outils($this->baseParamsBarreEtendue);
 		$this->assertEqual('spip', $b->nameSpace);
 		$this->assertEqual('header1', $b->markupSet[0]['id']);
-		$this->assertEqual(7, count($b->markupSet[0]));
+		$this->assertEqual(7, is_countable($b->markupSet[0]) ? count($b->markupSet[0]) : 0);
 		$this->assertEqual('couleurs', $b->markupSet[1]['id']);
-		$this->assertEqual(3, count($b->markupSet[1]['dropMenu']));
+		$this->assertEqual(3, is_countable($b->markupSet[1]['dropMenu']) ? count($b->markupSet[1]['dropMenu']) : 0);
 	}
 
 	function testOptionsIncorrectesNonIncluses() {
@@ -120,7 +120,7 @@ class Test_barre_outil_markitup extends SpipTest {
 		}
 		$b->markupSet[0]['fauxParam'];
 
-		$this->assertEqual(7, count($b->markupSet[0]));
+		$this->assertEqual(7, is_countable($b->markupSet[0]) ? count($b->markupSet[0]) : 0);
 	}
 
 	function testRecuperationDeParametreAvecGet() {
@@ -172,7 +172,7 @@ class Test_barre_outil_markitup extends SpipTest {
 		$coul = $p['markupSet'][1]['dropMenu'][0];
 		$coul['id'] = 'couleur_violette';
 		$b->ajouterApres('couleur_orange', $coul);
-		$this->assertEqual(4, count($b->markupSet[1]['dropMenu'])); // sous boutons
+		$this->assertEqual(4, is_countable($b->markupSet[1]['dropMenu']) ? count($b->markupSet[1]['dropMenu']) : 0); // sous boutons
 		$this->assertEqual($b->get('couleur_violette'), $coul);
 		$this->assertEqual($b->markupSet[1]['dropMenu'][2], $coul); // insertion au bon endroit
 
@@ -198,7 +198,7 @@ class Test_barre_outil_markitup extends SpipTest {
 		$coul = $p['markupSet'][1]['dropMenu'][0];
 		$coul['id'] = 'couleur_violette';
 		$b->ajouterAvant('couleur_orange', $coul);
-		$this->assertEqual(4, count($b->markupSet[0]['dropMenu'])); // sous boutons
+		$this->assertEqual(4, is_countable($b->markupSet[0]['dropMenu']) ? count($b->markupSet[0]['dropMenu']) : 0); // sous boutons
 		$this->assertEqual($b->get('couleur_violette'), $coul);
 		$this->assertEqual($b->markupSet[0]['dropMenu'][1], $coul); // insertion au bon endroit
 

@@ -30,10 +30,10 @@ function filtre_pp_charset() {
 	}
 
 	$charset = $GLOBALS['meta']['charset'];
-	$charset_sql = isset($GLOBALS['charset_sql_base']) ? $GLOBALS['charset_sql_base'] : '';
+	$charset_sql = $GLOBALS['charset_sql_base'] ?? '';
 	if ($charset_sql == 'utf8') {
 		$charset_sql = 'utf-8';
 	}
 
-	return $charset_sql ? $charset_sql : $charset;
+	return $charset_sql ?: $charset;
 }

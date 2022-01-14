@@ -121,10 +121,8 @@ class Barre_outils {
 
 	/**
 	 * Liste des paramètres valides pour une description d'outils (markupSet)
-	 *
-	 * @var array
 	 */
-	private $_liste_params_autorises = [
+	private array $_liste_params_autorises = [
 
 		'replaceWith',
 		'openWith',
